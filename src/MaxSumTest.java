@@ -6,6 +6,7 @@ import java.util.Random;
 public final class MaxSumTest {
     static private int seqStart = 0;
     static private int seqEnd = -1;
+    private static Random rand = new Random();
 
     /**
      * Cubic maximum contiguous subsequence sum algorithm.
@@ -77,7 +78,6 @@ public final class MaxSumTest {
 
         return maxSum;
     }
-
 
     /**
      * Recursive maximum contiguous subsequence sum algorithm.
@@ -159,36 +159,53 @@ public final class MaxSumTest {
         System.out.print(String.format("\t%12.6f", (totalTime * 1000 / i) / (double) 1000000));
     }
 
-    private static Random rand = new Random();
-
     /**
      * Simple test program.
      */
     public static void main(String[] args) {
-        int a[] = {4, -3, 5, -2, -1, 2, 6, -2};
+        System.out.println("Paolo T. Inocencion");
+        System.out.println("COSC 302 - Advanced Data Structures and Files");
+        System.out.println("September 15, 2017\n");
+
+        //int a[] = {4, -3, 5, -2, -1, 2, 6, -2};
+        int a[] = {-3, 4, -6, 11, 3, -1, -4, 2};
+        //int a[] = {5, -6, 4, 1, 3, -2, -4, 8};
         int maxSum;
 
-
         maxSum = maxSubSum1(a);
-        System.out.print("Cubic maximum contiguous subsequence sum algorithm: ");
+        System.out.print("Cubic: ");
         System.out.println("Max sum is " + maxSum + "; it goes"
                 + " from " + seqStart + " to " + seqEnd);
 
-        System.out.print("\nQuadratic maximum contiguous subsequence sum algorithm: ");
+        System.out.print("\nQuadratic: ");
         maxSum = maxSubSum2(a);
         System.out.println("Max sum is " + maxSum + "; it goes"
                 + " from " + seqStart + " to " + seqEnd);
 
 
-        System.out.print("\nDivide-and-conquer maximum contiguous subsequence sum algorithm: ");
+        System.out.print("\nDivide-and-conquer: ");
         maxSum = maxSubSum3(a);
         System.out.println("Max sum is " + maxSum);
 
 
-        System.out.print("\nLinear-time maximum contiguous subsequence sum algorithm: ");
+        System.out.print("\nLinear-time: ");
         maxSum = maxSubSum4(a);
         System.out.println("Max sum is " + maxSum + "; it goes"
                 + " from " + seqStart + " to " + seqEnd);
+
+
+        //added a for each loop to print contents of array
+        // currently in process
+
+
+        System.out.print("\na[] = {");
+        for (int i = 0; i < a.length; i++) {
+            if (i==a.length-1) {
+                System.out.print(a[i] + "}\n\n");
+            } else {
+                System.out.print(a[i] + ", ");
+            }
+         }
 
         // Get some timing info
         for (int n = 100; n <= 1000000; n *= 10) {

@@ -1,4 +1,15 @@
 import java.util.Random;
+/**
+ * The MaxSumTest program implements an application that
+ * compares 3 kinds of algorithms through the measurement
+ * of their runtimes displayed to the standard output in
+ * milliseconds.
+ *
+ * @author  Paolo T. Inocencion
+ *          COSC 302 - Advanced Data Structures and Files
+ * @version 1.3 - 2017-09-14
+ */
+
 
 // This includes additional code not in the text that keeps
 // track of the starting and ending points of best sequence
